@@ -1,14 +1,14 @@
-﻿# Clean Code PHP
+﻿# PHP ရွင္းရွင္းလင္းလင္း ေရးနည္း
 
-## Table of Contents
+## မာတိကာ
 
   1. [မိတ္ဆက္](#introduction)
-  2. [Variables](#variables)
-     * [အဓိပါယ္ရွိၿပီး ေခၚရလြယ္ေသာ variable မ်ား](#use-meaningful-and-pronounceable-variable-names)
-     * [Use the same vocabulary for the same type of variable](#use-the-same-vocabulary-for-the-same-type-of-variable)
-     * [ရွာရလြယ္ေသာနာမည္မ်ား (part 1)](#use-searchable-names-part-1)
-     * [ရွာရလြယ္ေသာနာမည္မ်ား (part 2)](#use-searchable-names-part-2)
-     * [Use explanatory variables](#use-explanatory-variables)
+  2. [Variables မ်ား](#variables)
+     * [အဓိပၸါယ္ရွိၿပီး ေခၚရလြယ္ေသာ variable မ်ား](#use-meaningful-and-pronounceable-variable-names)
+     * [အဓိပၸါယ္တူေနရင္ တိုတာေရြးပါ](#use-the-same-vocabulary-for-the-same-type-of-variable)
+     * [ရွာရလြယ္ေသာနာမည္မ်ားေရြးပါ (part 1)](#use-searchable-names-part-1)
+     * [ရွာရလြယ္ေသာနာမည္မ်ားေရြးပါ (part 2)](#use-searchable-names-part-2)
+     * [နားလည္လြယ္ေသာ virables မ်ားေရြးပါ](#use-explanatory-variables)
      * [Nesting အမ်ားႀကီးကိုေရွာင္ၿပီး အေစာပိုင္းမွာသာ return လုပ္ပါ (part 1)](#avoid-nesting-too-deeply-and-return-early-part-1)
      * [Nesting အမ်ားႀကီးကိုေရွာင္ၿပီး အေစာပိုင္းမွာသာ return လုပ္ပါ (part 2)](#avoid-nesting-too-deeply-and-return-early-part-2)
      * [Avoid Mental Mapping](#avoid-mental-mapping)
