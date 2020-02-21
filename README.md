@@ -66,13 +66,13 @@ Although many developers still use PHP 5, most of the examples in this article o
 
 ### အဓိပ္ပါယ်ရှိပြီး ခေါ်ရလွယ်သော variable မျာ
 
-**သိပ်အဆင်မပ​ြေဘူး -**
+**သိပ်အဆင်မပြေဘူး -**
 
 ```php
 $ymdstr = $moment->format('y-m-d');
 ```
 
-**အဆင်ပ​ြေတယ် -**
+**အဆင်ပြေတယ် -**
 
 ```php
 $currentDate = $moment->format('y-m-d');
@@ -82,7 +82,7 @@ $currentDate = $moment->format('y-m-d');
 
 ### Use the same vocabulary for the same type of variable
 
-**သိပ်အဆင်မပ​ြေဘူး -**
+**သိပ်အဆင်မပြေဘူး -**
 
 ```php
 getUserInfo();
@@ -91,7 +91,7 @@ getUserRecord();
 getUserProfile();
 ```
 
-**အဆင်ပ​ြေတယ် -**
+**အဆင်ပြေတယ် -**
 
 ```php
 getUser();
@@ -106,14 +106,14 @@ readable and searchable. By *not* naming variables that end up being meaningful 
 understanding our program, we hurt our readers.
 Make your names searchable.
 
-**သိပ်အဆင်မပ​ြေဘူး -**
+**သိပ်အဆင်မပြေဘူး -**
 
 ```php
 // What the heck is 448 for?
 $result = $serializer->serialize($data, 448);
 ```
 
-**အဆင်ပ​ြေတယ် -**
+**အဆင်ပြေတယ် -**
 
 ```php
 $json = $serializer->serialize($data, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
@@ -121,7 +121,7 @@ $json = $serializer->serialize($data, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT
 
 ### Use searchable names (part 2)
 
-**သိပ်အဆင်မပ​ြေဘူး -**
+**သိပ်အဆင်မပြေဘူး -**
 
 ```php
 class User
@@ -139,7 +139,7 @@ if ($user->access & 4) {
 $user->access ^= 2;
 ```
 
-**အဆင်ပ​ြေတယ် -**
+**အဆင်ပြေတယ် -**
 
 ```php
 class User
@@ -165,7 +165,7 @@ $user->access ^= User::ACCESS_CREATE;
 
 ### Use explanatory variables
 
-**သိပ်အဆင်မပ​ြေဘူး -**
+**သိပ်အဆင်မပြေဘူး -**
 
 ```php
 $address = 'One Infinite Loop, Cupertino 95014';
@@ -188,7 +188,7 @@ preg_match($cityZipCodeRegex, $address, $matches);
 saveCityZipCode($city, $zipCode);
 ```
 
-**အဆင်ပ​ြေတယ် -**
+**အဆင်ပြေတယ် -**
 
 Decrease dependence on regex by naming subpatterns.
 
@@ -207,7 +207,7 @@ saveCityZipCode($matches['city'], $matches['zipCode']);
 Too many if-else statements can make your code hard to follow. Explicit is better
 than implicit.
 
-**သိပ်အဆင်မပ​ြေဘူး -**
+**သိပ်အဆင်မပြေဘူး -**
 
 ```php
 function isShopOpen($day): bool
@@ -233,7 +233,7 @@ function isShopOpen($day): bool
 }
 ```
 
-**အဆင်ပ​ြေတယ် -**
+**အဆင်ပြေတယ် -**
 
 ```php
 function isShopOpen(string $day): bool
@@ -254,7 +254,7 @@ function isShopOpen(string $day): bool
 
 ### Avoid nesting too deeply and return early (part 2)
 
-**သိပ်အဆင်မပ​ြေဘူး -**
+**သိပ်အဆင်မပြေဘူး -**
 
 ```php
 function fibonacci(int $n)
@@ -275,7 +275,7 @@ function fibonacci(int $n)
 }
 ```
 
-**အဆင်ပ​ြေတယ် -**
+**အဆင်ပြေတယ် -**
 
 ```php
 function fibonacci(int $n): int
@@ -299,7 +299,7 @@ function fibonacci(int $n): int
 Don’t force the reader of your code to translate what the variable means.
 Explicit is better than implicit.
 
-**သိပ်အဆင်မပ​ြေဘူး -**
+**သိပ်အဆင်မပြေဘူး -**
 
 ```php
 $l = ['Austin', 'New York', 'San Francisco'];
@@ -316,7 +316,7 @@ for ($i = 0; $i < count($l); $i++) {
 }
 ```
 
-**အဆင်ပ​ြေတယ် -**
+**အဆင်ပြေတယ် -**
 
 ```php
 $locations = ['Austin', 'New York', 'San Francisco'];
@@ -338,7 +338,7 @@ foreach ($locations as $location) {
 If your class/object name tells you something, don't repeat that in your
 variable name.
 
-**သိပ်အဆင်မပ​ြေဘူး -**
+**သိပ်အဆင်မပြေဘူး -**
 
 ```php
 class Car
@@ -351,7 +351,7 @@ class Car
 }
 ```
 
-**အဆင်ပ​ြေတယ် -**
+**အဆင်ပြေတယ် -**
 
 ```php
 class Car
@@ -391,7 +391,7 @@ function createMicrobrewery($name = null): void
 }
 ```
 
-**အဆင်ပ​ြေတယ် -**
+**အဆင်ပြေတယ် -**
 
  You can use [type hinting](http://php.net/manual/en/functions.arguments.php#functions.arguments.type-declaration) and be sure that the `$breweryName` will not be `NULL`.
 
@@ -424,7 +424,7 @@ if ($a != $b) {
 The comparison `$a != $b` returns `FALSE` but in fact it's `TRUE`!
 The string `42` is different than the integer `42`.
 
-**အဆင်ပ​ြေတယ် -**
+**အဆင်ပြေတယ် -**
 
 The identical comparison will compare type and value.
 
@@ -455,7 +455,7 @@ Anything more than that should be consolidated. Usually, if you have more than t
 arguments then your function is trying to do too much. In cases where it's not, most 
 of the time a higher-level object will suffice as an argument.
 
-**သိပ်အဆင်မပ​ြေဘူး -**
+**သိပ်အဆင်မပြေဘူး -**
 
 ```php
 function createMenu(string $title, string $body, string $buttonText, bool $cancellable): void
@@ -464,7 +464,7 @@ function createMenu(string $title, string $body, string $buttonText, bool $cance
 }
 ```
 
-**အဆင်ပ​ြေတယ် -**
+**အဆင်ပြေတယ် -**
 
 ```php
 class MenuConfig
@@ -497,7 +497,7 @@ a function to just one action, they can be refactored easily and your code will 
 cleaner. If you take nothing else away from this guide other than this, you'll be ahead 
 of many developers.
 
-**သိပ်အဆင်မပ​ြေဘူး -**
+**သိပ်အဆင်မပြေဘူး -**
 ```php
 function emailClients(array $clients): void
 {
@@ -510,7 +510,7 @@ function emailClients(array $clients): void
 }
 ```
 
-**အဆင်ပ​ြေတယ် -**
+**အဆင်ပြေတယ် -**
 
 ```php
 function emailClients(array $clients): void
@@ -536,7 +536,7 @@ function isClientActive(int $client): bool
 
 ### Function names should say what they do
 
-**သိပ်အဆင်မပ​ြေဘူး -**
+**သိပ်အဆင်မပြေဘူး -**
 
 ```php
 class Email
@@ -554,7 +554,7 @@ $message = new Email(...);
 $message->handle();
 ```
 
-**အဆင်ပ​ြေတယ် -**
+**အဆင်ပြေတယ် -**
 
 ```php
 class Email 
@@ -580,7 +580,7 @@ When you have more than one level of abstraction your function is usually
 doing too much. Splitting up functions leads to reusability and easier
 testing.
 
-**သိပ်အဆင်မပ​ြေဘူး -**
+**သိပ်အဆင်မပြေဘူး -**
 
 ```php
 function parseBetterJSAlternative(string $code): void
@@ -650,7 +650,7 @@ function parseBetterJSAlternative(string $code): void
 }
 ```
 
-**အဆင်ပ​ြေတယ် -**
+**အဆင်ပြေတယ် -**
 
 The best solution is move out the dependencies of `parseBetterJSAlternative()` function.
 
@@ -718,7 +718,7 @@ Flags tell your user that this function does more than one thing. Functions shou
 do one thing. Split out your functions if they are following different code paths 
 based on a boolean.
 
-**သိပ်အဆင်မပ​ြေဘူး -**
+**သိပ်အဆင်မပြေဘူး -**
 
 ```php
 function createFile(string $name, bool $temp = false): void
@@ -731,7 +731,7 @@ function createFile(string $name, bool $temp = false): void
 }
 ```
 
-**အဆင်ပ​ြေတယ် -**
+**အဆင်ပြေတယ် -**
 
 ```php
 function createFile(string $name): void
@@ -763,7 +763,7 @@ any structure, using mutable data types that can be written to by anything, and 
 centralizing where your side effects occur. If you can do this, you will be happier 
 than the vast majority of other programmers.
 
-**သိပ်အဆင်မပ​ြေဘူး -**
+**သိပ်အဆင်မပြေဘူး -**
 
 ```php
 // Global variable referenced by following function.
@@ -782,7 +782,7 @@ splitIntoFirstAndLastName();
 var_dump($name); // ['Ryan', 'McDermott'];
 ```
 
-**အဆင်ပ​ြေတယ် -**
+**အဆင်ပြေတယ် -**
 
 ```php
 function splitIntoFirstAndLastName(string $name): array
@@ -807,7 +807,7 @@ production. Let's think about an example: what if you wanted to have configurati
 You could write global function like `config()`, but it could clash with another library 
 that tried to do the same thing.
 
-**သိပ်အဆင်မပ​ြေဘူး -**
+**သိပ်အဆင်မပြေဘူး -**
 
 ```php
 function config(): array
@@ -818,7 +818,7 @@ function config(): array
 }
 ```
 
-**အဆင်ပ​ြေတယ် -**
+**အဆင်ပြေတယ် -**
 
 ```php
 class Configuration
@@ -859,7 +859,7 @@ Singleton is an [anti-pattern](https://en.wikipedia.org/wiki/Singleton_pattern).
 
 There is also very good thoughts by [Misko Hevery](http://misko.hevery.com/about/) about the [root of problem](http://misko.hevery.com/2008/08/25/root-cause-of-singletons/).
 
-**သိပ်အဆင်မပ​ြေဘူး -**
+**သိပ်အဆင်မပြေဘူး -**
 
 ```php
 class DBConnection
@@ -886,7 +886,7 @@ class DBConnection
 $singleton = DBConnection::getInstance();
 ```
 
-**အဆင်ပ​ြေတယ် -**
+**အဆင်ပြေတယ် -**
 
 ```php
 class DBConnection
@@ -912,7 +912,7 @@ And now you must use instance of `DBConnection` in your application.
 
 ### Encapsulate conditionals
 
-**သိပ်အဆင်မပ​ြေဘူး -**
+**သိပ်အဆင်မပြေဘူး -**
 
 ```php
 if ($article->state === 'published') {
@@ -920,7 +920,7 @@ if ($article->state === 'published') {
 }
 ```
 
-**အဆင်ပ​ြေတယ် -**
+**အဆင်ပြေတယ် -**
 
 ```php
 if ($article->isPublished()) {
@@ -932,7 +932,7 @@ if ($article->isPublished()) {
 
 ### Avoid negative conditionals
 
-**သိပ်အဆင်မပ​ြေဘူး -**
+**သိပ်အဆင်မပြေဘူး -**
 
 ```php
 function isDOMNodeNotPresent(\DOMNode $node): bool
@@ -946,7 +946,7 @@ if (!isDOMNodeNotPresent($node))
 }
 ```
 
-**အဆင်ပ​ြေတယ် -**
+**အဆင်ပြေတယ် -**
 
 ```php
 function isDOMNodePresent(\DOMNode $node): bool
@@ -972,7 +972,7 @@ one thing. When you have classes and functions that have `if` statements, you
 are telling your user that your function does more than one thing. Remember,
 just do one thing.
 
-**သိပ်အဆင်မပ​ြေဘူး -**
+**သိပ်အဆင်မပြေဘူး -**
 
 ```php
 class Airplane
@@ -993,7 +993,7 @@ class Airplane
 }
 ```
 
-**အဆင်ပ​ြေတယ် -**
+**အဆင်ပြေတယ် -**
 
 ```php
 interface Airplane
@@ -1043,7 +1043,7 @@ Sometimes you are bitten by this freedom and it becomes tempting to do
 type-checking in your functions. There are many ways to avoid having to do this.
 The first thing to consider is consistent APIs.
 
-**သိပ်အဆင်မပ​ြေဘူး -**
+**သိပ်အဆင်မပြေဘူး -**
 
 ```php
 function travelToTexas($vehicle): void
@@ -1056,7 +1056,7 @@ function travelToTexas($vehicle): void
 }
 ```
 
-**အဆင်ပ​ြေတယ် -**
+**အဆင်ပြေတယ် -**
 
 ```php
 function travelToTexas(Vehicle $vehicle): void
@@ -1079,7 +1079,7 @@ extra verbiage that the faux "type-safety" you get doesn't make up for the lost
 readability. Keep your PHP clean, write good tests, and have good code reviews.
 Otherwise, do all of that but with PHP strict type declaration or strict mode.
 
-**သိပ်အဆင်မပ​ြေဘူး -**
+**သိပ်အဆင်မပြေဘူး -**
 
 ```php
 function combine($val1, $val2): int
@@ -1092,7 +1092,7 @@ function combine($val1, $val2): int
 }
 ```
 
-**အဆင်ပ​ြေတယ် -**
+**အဆင်ပြေတယ် -**
 
 ```php
 function combine(int $val1, int $val2): int
@@ -1109,7 +1109,7 @@ Dead code is just as bad as duplicate code. There's no reason to keep it in
 your codebase. If it's not being called, get rid of it! It will still be safe
 in your version history if you still need it.
 
-**သိပ်အဆင်မပ​ြေဘူး -**
+**သိပ်အဆင်မပြေဘူး -**
 
 ```php
 function oldRequestModule(string $url): void
@@ -1126,7 +1126,7 @@ $request = newRequestModule($requestUrl);
 inventoryTracker('apples', $request, 'www.inventory-awesome.io');
 ```
 
-**အဆင်ပ​ြေတယ် -**
+**အဆင်ပြေတယ် -**
 
 ```php
 function requestModule(string $url): void
@@ -1159,7 +1159,7 @@ server.
 
 Additionally, this is part of [Open/Closed](#openclosed-principle-ocp) principle.
 
-**သိပ်အဆင်မပ​ြေဘူး -**
+**သိပ်အဆင်မပြေဘူး -**
 
 ```php
 class BankAccount
@@ -1173,7 +1173,7 @@ $bankAccount = new BankAccount();
 $bankAccount->balance -= 100;
 ```
 
-**အဆင်ပ​ြေတယ် -**
+**အဆင်ပြေတယ် -**
 
 ```php
 class BankAccount
@@ -1226,7 +1226,7 @@ Therefore, use `private` by default and `public/protected` when you need to prov
 
 For more informations you can read the [blog post](http://fabien.potencier.org/pragmatism-over-theory-protected-vs-private.html) on this topic written by [Fabien Potencier](https://github.com/fabpot).
 
-**သိပ်အဆင်မပ​ြေဘူး -**
+**သိပ်အဆင်မပြေဘူး -**
 
 ```php
 class Employee
@@ -1243,7 +1243,7 @@ $employee = new Employee('John Doe');
 echo 'Employee name: '.$employee->name; // Employee name: John Doe
 ```
 
-**အဆင်ပ​ြေတယ် -**
+**အဆင်ပြေတယ် -**
 
 ```php
 class Employee
@@ -1288,7 +1288,7 @@ relationship (Human->Animal vs. User->UserDetails).
 3. You want to make global changes to derived classes by changing a base class.
 (Change the caloric expenditure of all animals when they move).
 
-**သိပ်အဆင်မပ​ြေဘူး -**
+**သိပ်အဆင်မပြေဘူး -**
 
 ```php
 class Employee 
@@ -1325,7 +1325,7 @@ class EmployeeTaxData extends Employee
 }
 ```
 
-**အဆင်ပ​ြေတယ် -**
+**အဆင်ပြေတယ် -**
 
 ```php
 class EmployeeTaxData 
@@ -1384,7 +1384,7 @@ more often it comes at some costs:
 For more informations you can read the full [blog post](https://ocramius.github.io/blog/fluent-interfaces-are-evil/)
 on this topic written by [Marco Pivetta](https://github.com/Ocramius).
 
-**သိပ်အဆင်မပ​ြေဘူး -**
+**သိပ်အဆင်မပြေဘူး -**
 
 ```php
 class Car
@@ -1430,7 +1430,7 @@ $car = (new Car())
   ->dump();
 ```
 
-**အဆင်ပ​ြေတယ် -**
+**အဆင်ပြေတယ် -**
 
 ```php
 class Car
@@ -1483,7 +1483,7 @@ The only condition is that your class should implement an interface and no other
 
 For more informations you can read [the blog post](https://ocramius.github.io/blog/when-to-declare-classes-final/) on this topic written by [Marco Pivetta (Ocramius)](https://ocramius.github.io/).
 
-**သိပ်အဆင်မပ​ြေဘူး -**
+**သိပ်အဆင်မပြေဘူး -**
 
 ```php
 final class Car
@@ -1505,7 +1505,7 @@ final class Car
 }
 ```
 
-**အဆင်ပ​ြေတယ် -**
+**အဆင်ပြေတယ် -**
 
 ```php
 interface Vehicle
@@ -1558,7 +1558,7 @@ It's important because if too much functionality is in one class and you modify 
 it can be difficult to understand how that will affect other dependent modules in
 your codebase.
 
-**သိပ်အဆင်မပ​ြေဘူး -**
+**သိပ်အဆင်မပြေဘူး -**
 
 ```php
 class UserSettings
@@ -1584,7 +1584,7 @@ class UserSettings
 }
 ```
 
-**အဆင်ပ​ြေတယ် -**
+**အဆင်ပြေတယ် -**
 
 ```php
 class UserAuth 
@@ -1631,7 +1631,7 @@ etc.) should be open for extension, but closed for modification." What does that
 mean though? This principle basically states that you should allow users to
 add new functionalities without changing existing code.
 
-**သိပ်အဆင်မပ​ြေဘူး -**
+**သိပ်အဆင်မပြေဘူး -**
 
 ```php
 abstract class Adapter
@@ -1696,7 +1696,7 @@ class HttpRequester
 }
 ```
 
-**အဆင်ပ​ြေတယ် -**
+**အဆင်ပြေတယ် -**
 
 ```php
 interface Adapter
@@ -1753,7 +1753,7 @@ classic Square-Rectangle example. Mathematically, a square is a rectangle, but
 if you model it using the "is-a" relationship via inheritance, you quickly
 get into trouble.
 
-**သိပ်အဆင်မပ​ြေဘူး -**
+**သိပ်အဆင်မပြေဘူး -**
 
 ```php
 class Rectangle
@@ -1806,7 +1806,7 @@ foreach ($rectangles as $rectangle) {
 }
 ```
 
-**အဆင်ပ​ြေတယ် -**
+**အဆင်ပြေတယ် -**
 
 The best way is separate the quadrangles and allocation of a more general subtype for both shapes.
 
@@ -1876,7 +1876,7 @@ classes that require large settings objects. Not requiring clients to set up
 huge amounts of options is beneficial, because most of the time they won't need
 all of the settings. Making them optional helps prevent having a "fat interface".
 
-**သိပ်အဆင်မပ​ြေဘူး -**
+**သိပ်အဆင်မပြေဘူး -**
 
 ```php
 interface Employee
@@ -1913,7 +1913,7 @@ class RobotEmployee implements Employee
 }
 ```
 
-**အဆင်ပ​ြေတယ် -**
+**အဆင်ပြေတယ် -**
 
 Not every worker is an employee, but every employee is a worker.
 
@@ -1972,7 +1972,7 @@ It can accomplish this through DI. A huge benefit of this is that it reduces
 the coupling between modules. Coupling is a very bad development pattern because
 it makes your code hard to refactor.
 
-**သိပ်အဆင်မပ​ြေဘူး -**
+**သိပ်အဆင်မပြေဘူး -**
 
 ```php
 class Employee
@@ -2007,7 +2007,7 @@ class Manager
 }
 ```
 
-**အဆင်ပ​ြေတယ် -**
+**အဆင်ပြေတယ် -**
 
 ```php
 interface Employee
@@ -2074,7 +2074,7 @@ worse than duplicate code, so be careful! Having said this, if you can make
 a good abstraction, do it! Don't repeat yourself, otherwise you'll find yourself 
 updating multiple places any time you want to change one thing.
 
-**သိပ်အဆင်မပ​ြေဘူး -**
+**သိပ်အဆင်မပြေဘူး -**
 
 ```php
 function showDeveloperList(array $developers): void
@@ -2110,7 +2110,7 @@ function showManagerList(array $managers): void
 }
 ```
 
-**အဆင်ပ​ြေတယ် -**
+**အဆင်ပြေတယ် -**
 
 ```php
 function showList(array $employees): void
